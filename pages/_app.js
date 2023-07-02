@@ -1,5 +1,16 @@
-import '@/styles/globals.css'
+//import "@/styles/globals.css";
+import "../styles/GlobalStyles.scss";
+import { useEffect, useState } from "react";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => {
+  const [isSSR, setIsSSR] = useState(true);
+
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
+
+  if (isSSR) return null;
+
+  return <Component {...pageProps} />;
+};
+export default App;

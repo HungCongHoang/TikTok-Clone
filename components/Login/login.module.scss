@@ -1,0 +1,124 @@
+//"font-primary font-semibold text-sm border border-solid border-black/10 text-black/80 py-0 px-3 flex items-center justify-center h-11 relative cursor-pointer mb-4 break-keep space-nowrap bg-white"
+.wrapper {
+    inset: 0px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    overflow: auto;
+    display: flex;
+    z-index: 999;
+    position: fixed;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    position: fixed;
+}
+
+//login
+.login {
+    width: 33.33333%;
+    max-height: 693px;
+    max-width: 400px;
+    height: 80%;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+
+}
+
+.main-info {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background-color: rgb(31,31,31);
+}
+
+// .body {
+//     //overflow: auto;
+// }
+
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.title {
+    margin: 1rem auto;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 3rem;
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+}
+
+//button
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    word-break: keep-all;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    --tw-bg-opacity: 1;
+    //background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    background-color: rgb(46,46,46);
+    padding: 0 0.75rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4rem;
+    //color: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+}
+
+.google-login {
+    margin-bottom: 1rem;
+}
+
+.icon {
+    position: absolute;
+    display: flex;
+    left: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.footer {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: rgb(22, 24, 35);
+    border-color: rgba(22, 24, 35, 0.12);
+}
+
+//sign-up
+.sign-up {
+    a {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    margin-left: 0.5rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    --tw-text-opacity: 1;
+    color: rgb(254 44 85/var(--tw-text-opacity));
+
+    
+    &:hover {
+        text-decoration-line: underline;
+    }
+}

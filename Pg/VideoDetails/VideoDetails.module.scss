@@ -1,0 +1,388 @@
+.wrapper {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+//video
+.video {
+    height: 100%;
+    width: 65%;
+}
+
+.video-container {
+    flex: 1 0 600px;
+    max-width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    padding: 0px 80px;
+}
+
+.background {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    filter: blur(2px);
+    left: 50%;
+    top: 50%;
+    transform: scale(11);
+    opacity: 0.3;
+    background: center center / cover no-repeat;
+}
+
+.video-wrapper {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.div-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.img-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.basic-player {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+}
+
+.main-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+//info
+.content-container {
+    height: 100%;
+    width: 35%;
+    background-color: var(--white);
+}
+
+//info
+.info-container {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 22px 32px 0px;
+    margin-bottom: 15px;
+    position: relative;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 92px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-name {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.nick-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+//main-content
+.main-content {
+    padding: 0px 32px;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.music-wrapper {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    flex: 0 0 auto;
+}
+
+.music {
+    margin-right: 8px;
+}
+
+//action
+.action {
+    position: relative;
+    padding: 16px 0px;
+}
+
+//button
+.button {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.like-btn,
+.comment-btn,
+.share-btn {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: row;
+}
+
+.comment-btn {
+    margin-left: 20px;
+}
+
+.like-icon,
+.comment-icon {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-radius: 50%;
+    transition: all 200ms ease-in-out 0s;
+    background-color: rgba(22, 24, 35, 0.06);
+    padding: 6px;
+    margin-right: 6px;
+}
+
+.share-btn {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0px;
+    position: relative;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(22, 24, 35);
+}
+
+.like-counter,
+.comment-counter {
+    color: rgba(22, 24, 35, .75);
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+}
+
+//action link
+.action-link {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+
+    a {
+        display: block;
+        font-size: 0px;
+        margin-right: 8px;
+    }
+}
+
+//link
+.link {
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-link {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    padding: 7px 0px 5px 12px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+.copy-link {
+    border: none;
+    background: none rgba(22, 24, 35, 0.06);
+    outline: none;
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    flex: 0 0 auto;
+    cursor: pointer;
+    padding: 7px 18px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+//comment
+.comment-list {
+    width: 100%;
+    height: 380px;
+    max-height: 380px;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    background-color: rgb(248, 248, 248);
+    border-top: 1px solid rgba(22, 24, 35, 0.2);
+    border-bottom: 1px solid rgba(22, 24, 35, 0.2);
+    overflow: hidden auto;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    position: relative;
+}
+
+//bottom-comment
+.bottom-comment {
+    flex: 0 0 auto;
+    background-color: rgb(255, 255, 255);
+    margin: 0px 30px;
+    padding: 14px 0px;
+}
+
+.comment {
+    color: rgb(254, 44, 85);
+    font-weight: 600;
+    height: 100%;
+    background: rgb(241, 241, 241);
+    border-radius: 2px;
+    padding: 14px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: unset;
+}
+
+// controls
+.back {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    background: rgba(84, 84, 84, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.icon-back {
+    color: var(--white);
+    font-size: 25px;
+}
+
+//logo
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 84px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+//icon play
+.icon-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-size: 6rem;
+    color: var(--white);
+}
+

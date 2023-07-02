@@ -1,7 +1,21 @@
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "~/*": [
+        "/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "**/*.js",
+    "components/video/video.js"
+  ]
 }

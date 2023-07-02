@@ -1,0 +1,138 @@
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    display: block;
+    width: 226px;
+    height: 302px;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-card {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22,24,35,0.06);
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(22,24,35,0.06);
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: end;
+    padding: 30px 12px 20px;
+    bottom: 0;
+    background: transparent;
+}
+
+.info {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 32px;
+    color: var(--white);
+    border-radius: 50%;
+    margin-bottom: 14px;
+    background-color: rgba(136,136,136,0.5);
+    overflow: hidden;
+}
+
+.avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.username {
+    width: 100%;
+    margin: 0;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+    color: rgba(255,255,255,1);
+    overflow: hidden;
+}
+
+.nickname {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    color: rgba(255,255,255,1);
+    overflow: hidden;
+}
+
+.follow {
+    margin-top: 8px;
+}
+
+.follow-btn {
+    position: relative;
+    display: flex;
+    min-width: 164px;
+    min-height: 36px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255,44,85,1);
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+    user-select: none;
+}
