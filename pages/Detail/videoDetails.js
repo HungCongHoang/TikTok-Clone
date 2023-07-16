@@ -23,6 +23,8 @@ import {
   TwitterIcon1,
 } from "../../components/icons";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const cx = classNames.bind(styles);
 
@@ -87,7 +89,7 @@ function VideoDetails() {
               )}
             >
               <div className={cx("main-info")}>
-                <img
+                <Image
                   className={cx("avatar")}
                   src={data.postedBy.image}
                   alt={data.postedBy.image}
@@ -138,29 +140,29 @@ function VideoDetails() {
               </div>
               <div className={cx("action-link")}>
                 <Tippy content="Embedded" placement="top">
-                  <a className={cx("code-icon")} href="/">
+                  <Link className={cx("code-icon")} href="/">
                     <CodeIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to friends" placement="top">
-                  <a className={cx("share-icon")} href="/">
+                  <Link className={cx("share-icon")} href="/">
                     <ShareIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to Facebook" placement="top">
-                  <a className={cx("fb-icon")} href="/">
+                  <Link className={cx("fb-icon")} href="/">
                     <FacebookIcon1 />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to What'sApp" placement="top">
-                  <a className={cx("whatsapp-icon")} href="/">
+                  <Link className={cx("whatsapp-icon")} href="/">
                     <WhatsAppIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to Twitter" placement="top">
-                  <a className={cx("twitter-icon")} href="/">
+                  <Link className={cx("twitter-icon")} href="/">
                     <TwitterIcon1 />
-                  </a>
+                  </Link>
                 </Tippy>
                 <button className={cx("share-btn")}>
                   <span className={cx("share-icon")}>

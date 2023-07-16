@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./SuggestedAccounts.module.scss";
 import config from "config";
+import Image from "next/image";
 
 const cx = classNames.bind(styles);
 
@@ -20,7 +21,7 @@ function SuggestedAccountItem({ data }) {
       }}
       className={cx("account-item")}
     >
-      <img
+      <Image
         className={cx("avatar")}
         src={data?.postedBy?.image || data?.image}
         alt={data?.postedBy?.image || data?.image}

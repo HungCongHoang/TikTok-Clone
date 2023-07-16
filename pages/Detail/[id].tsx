@@ -28,6 +28,8 @@ import useAuthStore from "../../store/authStore";
 import axios from "axios";
 import { IUser, Video } from "../../types";
 import Comment from "./components/Comment"
+import Image from "next/image";
+import Link from "next/link";
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +61,7 @@ function Detail({ postDetails, follows }: IProps) {
         }
       } 
     );
-  },[post?.likes.length, userProfile])
+  },[post?.likes?.length, userProfile])
 
   useEffect(() => {
     Follows?.filter((items : any) => {
@@ -201,7 +203,7 @@ function Detail({ postDetails, follows }: IProps) {
       <div className={cx("content-container")}>
         <div className={cx("info-container")}>
           <div className={cx("main-info")}>
-            <img
+            <Image
               className={cx("avatar")}
               src={post?.postedBy.image}
               alt={post?.postedBy.image}
@@ -294,29 +296,29 @@ function Detail({ postDetails, follows }: IProps) {
               </div>
               <div className={cx("action-link")}>
                 <Tippy content="Embedded" placement="top">
-                  <a className={cx("code-icon")} href="/">
+                  <Link className={cx("code-icon")} href="/">
                     <CodeIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to friends" placement="top">
-                  <a className={cx("share-icon")} href="/">
+                  <Link className={cx("share-icon")} href="/">
                     <ShareIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to Facebook" placement="top">
-                  <a className={cx("fb-icon")} href="/">
+                  <Link className={cx("fb-icon")} href="/">
                     <FacebookIcon1 />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to What'sApp" placement="top">
-                  <a className={cx("whatsapp-icon")} href="/">
+                  <Link className={cx("whatsapp-icon")} href="/">
                     <WhatsAppIcon />
-                  </a>
+                  </Link>
                 </Tippy>
                 <Tippy content="Share to Twitter" placement="top">
-                  <a className={cx("twitter-icon")} href="/">
+                  <Link className={cx("twitter-icon")} href="/">
                     <TwitterIcon1 />
-                  </a>
+                  </Link>
                 </Tippy>
                 <button className={cx("share-btn")}>
                   <span className={cx("share-icon")}>
@@ -336,7 +338,7 @@ function Detail({ postDetails, follows }: IProps) {
         <div className={cx("comment-list")}>
           {post?.comments?.length > 0 && 
             post.comments.map((item: any, index: any) => (
-              <Comment data={item} index={index} />
+              <Comment key={index} data={item} index={index} />
             ))}
         </div>
         <div className={cx("wrapper-comment")}>

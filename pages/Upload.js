@@ -9,6 +9,7 @@ import useAuthStore from "../store/authStore";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 const cx = classNames.bind(styles);
 
 function Upload() {
@@ -178,7 +179,7 @@ function Upload() {
               onChange={uploadVideo}
             />
             <div className={cx("upload-card")}>
-              <img
+              <Image
                 src="//lf16-tiktok-common.ibytedtos.com/obj/tiktok-web-common-sg/ies/creator_center/svgs/cloud-icon1.ecf0bf2b.svg"
                 alt=""
                 className={cx("icon-cloud")}
@@ -276,14 +277,14 @@ function Upload() {
         <div className={cx("footer-container")}>
           <footer className={cx("content-wrapper")}>
             <div className={cx("logo")}>
-              <img
+              <Image
                 src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/logo-7328701c910ebbccb5670085d243fc12.svg"
                 alt=""
                 style={{
                   width: "33px",
                 }}
               />
-              <img
+              <Image
                 src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/logotext-9b4d14640f93065ec36dab71c806e135.svg"
                 alt=""
                 style={{

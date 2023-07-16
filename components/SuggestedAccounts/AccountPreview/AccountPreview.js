@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Button from "../../../components/Button";
 import styles from "./AccountPreview.module.scss";
+import Image from "next/image";
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ function AccountPreview({ data }) {
   return (
     <div className={cx("wrapper")}>
       <header className={cx("header")}>
-        <img
+        <Image
           className={cx("avatar")}
           src={data?.postedBy?.image || data?.image}
           alt=""
