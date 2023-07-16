@@ -28,10 +28,10 @@ function FollowingAccounts({ label }) {
       // fetch(
       //   "https://tiktok.fullstack.edu.vn/api/users/suggested?page=2&per_page=1"
       // )
-      fetch(`${process.env.process.env.NEXT_PUBLIC_BASE_URL}/api/follow`)
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/follow`)
         .then((response) => response.json())
         .then((json) => setItem(json));
-      fetch(`${process.env.process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
         .then((response) => response.json())
         .then((json) => setFollow(json));
     }

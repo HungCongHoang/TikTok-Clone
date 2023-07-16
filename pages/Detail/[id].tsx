@@ -85,7 +85,7 @@ function Detail({ postDetails, follows }: IProps) {
   let follow = false;
 
   useEffect(() => {
-    if (post?.likes.length > 0 && userLike?._ref === userProfile?._id && userProfile !== null ) {
+    if (post?.likes?.length > 0 && userLike?._ref === userProfile?._id && userProfile !== null ) {
       setLikeColor("#ff3b5c");
     } else {
       setLikeColor("#ebebeb");
