@@ -57,7 +57,7 @@ function Detail({ postDetails, follows }: IProps) {
     post?.likes?.map(
       (item : any) => {
         if (item._ref === userProfile?._id) {
-          setUserLike(item)
+          setUserLike(item);
         }
       } 
     );
@@ -84,13 +84,15 @@ function Detail({ postDetails, follows }: IProps) {
   let like = false;
   let follow = false;
 
+
   useEffect(() => {
     if (post?.likes?.length > 0 && userLike?._ref === userProfile?._id && userProfile !== null ) {
       setLikeColor("#ff3b5c");
-    } else {
-      setLikeColor("#ebebeb");
-    }
-  }, [userProfile]);
+    } 
+    //else {
+    //   //setLikeColor("#ebebeb");
+    // }
+  }, [post?.likes?.length,userProfile]);
 
   const handelLike = async () => {
     if (userProfile) {

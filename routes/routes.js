@@ -7,7 +7,7 @@ import config from "../config";
 import Home from "../Pg/Home";
 import Following from "../Pg/Following";
 import Profile from "../Pg/Profile";
-// import Upload from "../Pg/Upload";
+//import Upload from "../Pg/Upload";
 import Upload from "../pages/Upload";
 import Search from "../Pg/Search";
 import Live from "../Pg/Live";

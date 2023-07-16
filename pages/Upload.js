@@ -3,13 +3,14 @@ import { useState } from "react";
 import styles from "./Upload.module.scss";
 import { client } from "../utils/client";
 import axios from "axios";
-import { Headeronly } from "layouts";
 import { useRouter } from "next/router";
 import useAuthStore from "../store/authStore";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import { Logo2 } from "../components/icons/icons";
+
 const cx = classNames.bind(styles);
 
 function Upload() {
@@ -92,74 +93,74 @@ function Upload() {
         </div>
         <div className={cx("container")}>
           {/* <div className={cx("uploader")}>
-            {isLoading ? (
-              <p>Loading...</p>
-            ) : videoAsset ? (
-              <div>
-                <video
-                  src={videoAsset}
-                  autoPlay
-                  loop
-                  controls
-                  style={{
-                    height: "100%",
-                    width: "50%",
-                  }}
-                ></video>
-              </div>
-            ) : (
-              <div className={cx("upload")}>
-                <input
-                  type="file"
-                  name="upload-video"
-                  className={cx("upload-video")}
-                  onChange={uploadVideo}
-                />
-                <div className={cx("upload-card")}>
-                  <img
-                    src="//lf16-tiktok-common.ibytedtos.com/obj/tiktok-web-common-sg/ies/creator_center/svgs/cloud-icon1.ecf0bf2b.svg"
-                    alt=""
-                    className={cx("icon-cloud")}
+              {isLoading ? (
+                <p>Loading...</p>
+              ) : videoAsset ? (
+                <div>
+                  <video
+                    src={videoAsset}
+                    autoPlay
+                    loop
+                    controls
+                    style={{
+                      height: "100%",
+                      width: "50%",
+                    }}
+                  ></video>
+                </div>
+              ) : (
+                <div className={cx("upload")}>
+                  <input
+                    type="file"
+                    name="upload-video"
+                    className={cx("upload-video")}
+                    onChange={uploadVideo}
                   />
-                  <div className={cx("text-main")}>
-                    <span className={cx("text")}>Select video to upload</span>
-                  </div>
-                  <div>
-                    <span className={cx("text1")}>Or drag and drop a file</span>
-                  </div>
-                  <div className={cx("text-sub")}>
-                    <span className={cx("text1")}>
-                      Long videos can be split into multiple parts to get more
-                      exposure
-                    </span>
-                  </div>
-                  <div className={cx("text-video-info")}>
-                    <div className={cx("info")}>
-                      <span className={cx("text1")}>MP4 or WebM</span>
+                  <div className={cx("upload-card")}>
+                    <img
+                      src="//lf16-tiktok-common.ibytedtos.com/obj/tiktok-web-common-sg/ies/creator_center/svgs/cloud-icon1.ecf0bf2b.svg"
+                      alt=""
+                      className={cx("icon-cloud")}
+                    />
+                    <div className={cx("text-main")}>
+                      <span className={cx("text")}>Select video to upload</span>
                     </div>
-                    <div className={cx("info")}>
+                    <div>
+                      <span className={cx("text1")}>Or drag and drop a file</span>
+                    </div>
+                    <div className={cx("text-sub")}>
                       <span className={cx("text1")}>
-                        720x1280 resolution or higher
+                        Long videos can be split into multiple parts to get more
+                        exposure
                       </span>
                     </div>
-                    <div className={cx("info")}>
-                      <span className={cx("text1")}>Up to 30 minutes</span>
-                    </div>
-                    <div className={cx("info")}>
-                      <span className={cx("text1")}>Less than 2 GB</span>
-                    </div>
-                  </div>
-                  <div className={cx("select-button")}>
-                    <button className={cx("button")}>
-                      <div className={cx("text-button")}>
-                        <span className={cx("text-select")}>Select file</span>
+                    <div className={cx("text-video-info")}>
+                      <div className={cx("info")}>
+                        <span className={cx("text1")}>MP4 or WebM</span>
                       </div>
-                    </button>
+                      <div className={cx("info")}>
+                        <span className={cx("text1")}>
+                          720x1280 resolution or higher
+                        </span>
+                      </div>
+                      <div className={cx("info")}>
+                        <span className={cx("text1")}>Up to 30 minutes</span>
+                      </div>
+                      <div className={cx("info")}>
+                        <span className={cx("text1")}>Less than 2 GB</span>
+                      </div>
+                    </div>
+                    <div className={cx("select-button")}>
+                      <button className={cx("button")}>
+                        <div className={cx("text-button")}>
+                          <span className={cx("text-select")}>Select file</span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div> */}
+              )}
+            </div> */}
           <div className={cx("uploader")}>
             {videoAsset && (
               <div className={cx("upload")}>
@@ -282,7 +283,7 @@ function Upload() {
         <div className={cx("footer-container")}>
           <footer className={cx("content-wrapper")}>
             <div className={cx("logo")}>
-              <Image
+              {/* <Image
                 width={40}
                 height={40}
                 src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/logo-7328701c910ebbccb5670085d243fc12.svg"
@@ -302,7 +303,8 @@ function Upload() {
                   position: "relative",
                   top: "-2px",
                 }}
-              />
+              /> */}
+              <Logo2 />
             </div>
           </footer>
           <div className={cx("bottom-wrapper")}>
