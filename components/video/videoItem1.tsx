@@ -15,7 +15,7 @@ import {
 import Link from 'next/link';
 import config from "../../config";
 
-import Image from "../image/image";
+import Image1 from "../image/image";
 import Button from "../Button";
 
 import React from "react";
@@ -204,7 +204,7 @@ function VideoItem({ data, index, user }) {
 
   return (
     <div key={index} className={cx("wrapper")}>
-      <Image
+      <Image1
         key={index}
         className={cx("user-image")}
         src={data.postedBy.image}

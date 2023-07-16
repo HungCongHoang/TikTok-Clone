@@ -32,7 +32,7 @@ function VideoPlayer({ data }) {
       <div
         className={cx("background")}
         style={{
-          backgroundImage: `url(${data?.video.asset.url})`,
+          backgroundImage1: `url(${data?.video.asset.url})`,
         }}
       ></div>
       <div className={cx("video-wrapper")} onClick={handlePlay}>

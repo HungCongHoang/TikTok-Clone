@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-import Image from "../../components/image/image";
+import Image1 from "../../components/image/image";
 import Button from "../../components/Button";
 
 import React from "react";
@@ -240,7 +240,7 @@ function VideoCard({ data, index, user, userfollows }) {
 
   return (
     <div key={index} className={cx("wrapper")}>
-      <Image
+      <Image1
         key={index}
         className={cx("user-image")}
         src={data?.postedBy?.image}

@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 // Import file trong dự án
 import config from "../../../config";
 import styles from "./Header.module.scss";
-import Image from "../../../components/image/image";
+import Image1 from "../../../components/image/image";
 import Button from "../../../components/Button/Button";
 import Menu from "../../../components/Popper/Menu/Menu";
 import { MessageIcon, EmailIcon } from "../../../components/icons/icons";
@@ -205,7 +205,7 @@ function Header() {
             onChange={handleMenuChange}
           >
             {userProfile ? (
-              <Image
+              <Image1
                 src={userProfile.image}
                 className={cx("user-avatar")}
                 alt="Nguyen Van A"
