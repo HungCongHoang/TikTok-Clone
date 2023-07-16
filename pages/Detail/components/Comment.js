@@ -18,6 +18,8 @@ function Comment({ data, index }) {
           user._id === (data.postedBy._ref || data.postedBy._id) && (
             <div key={index} className={cx("main")}>
               <Image
+                width={40}
+                height={40}
                 className={cx("avatar-comment")}
                 src={user.image}
                 alt={user.image}

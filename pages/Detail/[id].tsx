@@ -204,6 +204,7 @@ function Detail({ postDetails, follows }: IProps) {
         <div className={cx("info-container")}>
           <div className={cx("main-info")}>
             <Image
+            width={40} height= {40}
               className={cx("avatar")}
               src={post?.postedBy.image}
               alt={post?.postedBy.image}

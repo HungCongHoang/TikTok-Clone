@@ -23,6 +23,8 @@ function SuggestedAccountItem({ data }) {
     >
       <Image
         className={cx("avatar")}
+        width={40}
+        height={40}
         src={data?.postedBy?.image || data?.image}
         alt={data?.postedBy?.image || data?.image}
       />

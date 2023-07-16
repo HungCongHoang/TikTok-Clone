@@ -241,6 +241,8 @@ function VideoCard({ data, index, user, userfollows }) {
   return (
     <div key={index} className={cx("wrapper")}>
       <Image1
+      width={40}
+      height={40}
         key={index}
         className={cx("user-image")}
         src={data?.postedBy?.image}

@@ -19,6 +19,7 @@ function AccountPreview({ data }) {
     <div className={cx("wrapper")}>
       <header className={cx("header")}>
         <Image
+        width={40} height= {40}
           className={cx("avatar")}
           src={data?.postedBy?.image || data?.image}
           alt=""

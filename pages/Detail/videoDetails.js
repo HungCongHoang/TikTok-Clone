@@ -90,6 +90,7 @@ function VideoDetails() {
             >
               <div className={cx("main-info")}>
                 <Image
+                width={40} height= {40}
                   className={cx("avatar")}
                   src={data.postedBy.image}
                   alt={data.postedBy.image}

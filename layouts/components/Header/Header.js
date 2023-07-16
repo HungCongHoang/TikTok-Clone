@@ -206,6 +206,8 @@ function Header() {
           >
             {userProfile ? (
               <Image1
+                width={40}
+                height={40}
                 src={userProfile.image}
                 className={cx("user-avatar")}
                 alt="Nguyen Van A"

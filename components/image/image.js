@@ -10,6 +10,8 @@ const Image1 = forwardRef(
   (
     {
       src,
+      width,
+      height,
       alt,
       className,
       fallback: customFallback = images.noImage1,
@@ -27,6 +29,8 @@ const Image1 = forwardRef(
       <Image
         className={classNames(styles.wrapper, className)}
         ref={ref}
+        width={width}
+        height={height}
         src={fallback || src}
         {...props}
         alt={alt}
@@ -39,10 +43,10 @@ const Image1 = forwardRef(
 Image1.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
+  width: PropTypes.any,
+  height: PropTypes.any,
   className: PropTypes.string,
   fallback: PropTypes.string,
 };
-
-Image1.displayName = "Image1";
 
 export default Image1;
