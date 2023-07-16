@@ -3,6 +3,7 @@ import { useState, forwardRef } from "react";
 import classNames from "classnames";
 import images from "../../assets/images";
 import styles from "./image.module.scss";
+import Image from "next/image";
 
 const Image = forwardRef(
   (
@@ -22,7 +23,7 @@ const Image = forwardRef(
     };
 
     return (
-      <img
+      <Image
         className={classNames(styles.wrapper, className)}
         ref={ref}
         src={fallback || src}

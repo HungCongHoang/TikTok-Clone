@@ -138,7 +138,7 @@ function Login() {
               }}
             >
               <div style={{ fontSize: "1.6rem", color: "white" }}>
-                Don't have an account?
+                Dont have an account?
               </div>
               <a
                 className={cx("sign-up")}
