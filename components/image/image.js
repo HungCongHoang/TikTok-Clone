@@ -5,6 +5,8 @@ import images from "../../assets/images";
 import styles from "./image.module.scss";
 import Image from "next/image";
 
+const a = 1;
+
 const Image1 = forwardRef(
   (
     {
