@@ -5,8 +5,7 @@ import images from "../../assets/images";
 import styles from "./image.module.scss";
 import Image from "next/image";
 
-const a = 1;
-
+// eslint-disable-next-line react/display-name
 const Image1 = forwardRef(
   (
     {
@@ -43,5 +42,7 @@ Image1.propTypes = {
   className: PropTypes.string,
   fallback: PropTypes.string,
 };
+
+Image1.displayName = "Image1";
 
 export default Image1;
