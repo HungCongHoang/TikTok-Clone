@@ -49,7 +49,7 @@ function Upload() {
   //   // console.log(reader);
   //   var url = URL.createObjectURL(e.target.files[0]);
   //   setVideoAsset(url);
-  //   await axios.get(`http://localhost:3000/api/post`, e.target.files[0]);
+  //   await axios.get(`process.env.NEXT_PUBLIC_BASE_URL/api/post`, e.target.files[0]);
   //   router.push("/");
   // };
   const handleuploadVideo = async () => {
@@ -72,7 +72,10 @@ function Upload() {
           },
           topic: topic,
         };
-        await axios.post("http://localhost:3000/api/post", document);
+        await axios.post(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`,
+          document
+        );
         window.location = "/";
       }
     } else {
@@ -180,7 +183,8 @@ function Upload() {
             />
             <div className={cx("upload-card")}>
               <Image
-              width={40} height= {40}
+                width={40}
+                height={40}
                 src="//lf16-tiktok-common.ibytedtos.com/obj/tiktok-web-common-sg/ies/creator_center/svgs/cloud-icon1.ecf0bf2b.svg"
                 alt=""
                 className={cx("icon-cloud")}
@@ -279,7 +283,8 @@ function Upload() {
           <footer className={cx("content-wrapper")}>
             <div className={cx("logo")}>
               <Image
-              width={40} height= {40}
+                width={40}
+                height={40}
                 src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/logo-7328701c910ebbccb5670085d243fc12.svg"
                 alt=""
                 style={{
@@ -287,7 +292,8 @@ function Upload() {
                 }}
               />
               <Image
-              width={40} height= {40}
+                width={40}
+                height={40}
                 src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/logotext-9b4d14640f93065ec36dab71c806e135.svg"
                 alt=""
                 style={{

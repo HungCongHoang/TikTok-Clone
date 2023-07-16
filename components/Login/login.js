@@ -103,7 +103,10 @@ function Login() {
       userName: name,
       image: picture,
     };
-    await axios.post("http://localhost:3000/api/auth", user);
+    await axios.post(
+      `${process.env.process.env.NEXT_PUBLIC_BASE_URL}/api/auth`,
+      user
+    );
     addUser(user);
   };
   return (

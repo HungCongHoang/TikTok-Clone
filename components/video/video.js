@@ -30,7 +30,7 @@ function Video() {
   //     .catch((err) => console.error(err));
   // }, []);
   // useEffect(() => {
-  //   fetch(`http://localhost:3000/api/post`)
+  //   fetch(`process.env.process.env.NEXT_PUBLIC_BASE_URL/api/post`)
   //     .then((response) => response.json())
   //     .then((json) => {
   //       // setData(json);
@@ -39,15 +39,19 @@ function Video() {
   // }, []);
 
   // async function fecthDataFollow(item) {
-  //   const res = await axios.get(`http://localhost:3000/api/${item?.userId}`);
+  //   const res = await axios.get(`process.env.process.env.NEXT_PUBLIC_BASE_URL/api/${item?.userId}`);
   //   setFollow(res?.data);
   // }
 
   useEffect(() => {
     let userFollow = [];
     async function fecthData() {
-      const res = await axios.get(`http://localhost:3000/api/follow`);
-      const { data } = await axios.get(`http://localhost:3000/api/post`);
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/follow`
+      );
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`
+      );
 
       setData(data);
       res?.data?.map((item) => {

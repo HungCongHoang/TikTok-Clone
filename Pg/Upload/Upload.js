@@ -56,8 +56,11 @@ function Upload() {
         //postedBy: userProfile?.userName,
         topic: "video",
       };
-      await axios.post("http://localhost:3000/api/post", document);
-      //router.push("http://localhost:3000");
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`,
+        document
+      );
+      //router.push("process.env.NEXT_PUBLIC_BASE_URL");
       //setSavingPost(true);
       //router.reload();
       window.location = "/";

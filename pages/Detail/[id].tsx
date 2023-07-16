@@ -97,7 +97,8 @@ function Detail({ postDetails, follows }: IProps) {
       if (userLike?._ref !== userProfile?._id) {
         likeRef.current.style.color = "#ff3b5c";
         like = true;
-        const res = await axios.put("http://localhost:3000/api/like", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/like`, {
           userId: userProfile._id,
           postId: post._id,
           like,
@@ -107,7 +108,8 @@ function Detail({ postDetails, follows }: IProps) {
       } else if (post?.likes.length === 0) {
         likeRef.current.style.color = "#ff3b5c";
         like = true;
-        const res = await axios.put("http://localhost:3000/api/like", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/like`, {
           userId: userProfile._id,
           postId: post._id,
           like,
@@ -118,7 +120,8 @@ function Detail({ postDetails, follows }: IProps) {
       } else {
         likeRef.current.style.color = "#ebebeb";
         like = false
-        const res = await axios.put("http://localhost:3000/api/like", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/like`, {
           userId: userProfile._id,
           postId: post._id,
           like,
@@ -134,7 +137,8 @@ function Detail({ postDetails, follows }: IProps) {
   const handleComment =async (e : any) => {
     let res = null;
     if (e.keyCode === 13 && e.type === "keyup") {
-      res = await axios.put(`http://localhost:3000/api/post/${post._id}`, {
+      res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+      }/api/post/${post._id}`, {
         comment: userComment,
         userId: userProfile._id,
       });
@@ -143,7 +147,8 @@ function Detail({ postDetails, follows }: IProps) {
       commentRef.current.focus();
     }
     else if (e.type === "click") {
-      res = await axios.put(`http://localhost:3000/api/post/${post._id}`, {
+      res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+      }/api/post/${post._id}`, {
         comment: userComment,
         userId: userProfile._id,
       });
@@ -157,7 +162,8 @@ function Detail({ postDetails, follows }: IProps) {
     if (userProfile) {
       if (Follow?.follows?.length === 0) {
         follow = true;
-        const res = await axios.put("http://localhost:3000/api/follow", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/follow`, {
           postId: post?.postedBy?._id,
           userId: userProfile?._id,
           follow,
@@ -171,7 +177,8 @@ function Detail({ postDetails, follows }: IProps) {
         contentFollow !== "Following"
       ) {
         follow = true;
-        const res = await axios.put("http://localhost:3000/api/follow", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/follow`, {
           postId: post?.postedBy?._id,
           userId: userProfile?._id,
           follow,
@@ -181,7 +188,8 @@ function Detail({ postDetails, follows }: IProps) {
         setUserFollow(null);
       }else {
         follow = false;
-        const res = await axios.put("http://localhost:3000/api/follow", {
+        const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/follow`, {
           postId: post?.postedBy?._id,
           userId: userProfile?._id,
           follow,
@@ -361,8 +369,10 @@ function Detail({ postDetails, follows }: IProps) {
 }
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const res = await axios.get(`http://localhost:3000/api/post/${id}`);
-  const { data } = await axios.get(`http://localhost:3000/api/follow`);
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL
+  }/api/post/${id}`);
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL
+  }/api/follow`);
   return {
     props: { postDetails: res.data, follows: data },
   };

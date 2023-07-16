@@ -10,7 +10,9 @@ const authStore = (set) => ({
   removeUser: () => set({ userProfile: null }),
 
   fetchAllUsers: async () => {
-    const response = await axios.get(`http://localhost:3000/api/users`);
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/users`
+    );
 
     set({ allUsers: response.data });
   },

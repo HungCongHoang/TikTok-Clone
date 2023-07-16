@@ -121,7 +121,7 @@ function VideoItem({ data, index, user }) {
   //         },
   //         like: like,
   //       };
-  //       await axios.post("http://localhost:3000/api/post", document);
+  //       await axios.post("process.env.NEXT_PUBLIC_BASE_URL/api/post", document);
   //       //router.push("/");
   //     } else {
   //       setLike((prev) => prev - 1);
@@ -139,7 +139,8 @@ function VideoItem({ data, index, user }) {
         setLike((prev) => prev + 1);
         likeRef.current.style.color = "#ff3b5c";
         setIsLike(true);
-        const { data } = await axios.put("http://localhost:3000/api/like", {
+        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/like`, {
           userId: userProfile._id,
           postId: post?._id,
           islike,
@@ -337,7 +338,8 @@ function VideoItem({ data, index, user }) {
 export const getServerSideProps = async ({ params: { id } }: {
    params: { id: string } 
 }) => {
-  const { data } = await axios.get(`http://localhost:3000/api/post/${id}`);
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL
+  }/api/post/${id}`);
   return {
     props: { postDetails: data },
   };

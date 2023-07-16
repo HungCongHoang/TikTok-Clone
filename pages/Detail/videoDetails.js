@@ -48,11 +48,14 @@ function VideoDetails() {
         setLike((prev) => prev + 1);
         likeRef.current.style.color = "#ff3b5c";
         setIsLike(true);
-        const { data } = await axios.put("http://localhost:3000/api/like", {
-          userId: userProfile._id,
-          postId: post?._id,
-          islike,
-        });
+        const { data } = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/like`,
+          {
+            userId: userProfile._id,
+            postId: post?._id,
+            islike,
+          }
+        );
 
         setPost({ ...post, likes: data.likes });
       } else {
@@ -90,7 +93,8 @@ function VideoDetails() {
             >
               <div className={cx("main-info")}>
                 <Image
-                width={40} height= {40}
+                  width={40}
+                  height={40}
                   className={cx("avatar")}
                   src={data.postedBy.image}
                   alt={data.postedBy.image}
@@ -190,7 +194,9 @@ function VideoDetails() {
 }
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = await axios.get(`http://localhost:3000/api/post/${id}`);
+  const { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${id}`
+  );
   return {
     props: { postDetails: data },
   };

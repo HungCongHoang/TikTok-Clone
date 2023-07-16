@@ -132,31 +132,40 @@ function VideoCard({ data, index, user, userfollows }) {
       if (userLike?._ref !== user?._id) {
         likeRef.current.style.color = "#ff3b5c";
         like = true;
-        const res = await axios.put("http://localhost:3000/api/like", {
-          userId: user._id,
-          postId: post._id,
-          like,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/like`,
+          {
+            userId: user._id,
+            postId: post._id,
+            like,
+          }
+        );
 
         setPost(res.data);
       } else if (userLike === {}) {
         likeRef.current.style.color = "#ff3b5c";
         like = true;
-        const res = await axios.put("http://localhost:3000/api/like", {
-          userId: user._id,
-          postId: post._id,
-          like,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/like`,
+          {
+            userId: user._id,
+            postId: post._id,
+            like,
+          }
+        );
 
         setPost(res.data);
       } else {
         likeRef.current.style.color = "#ebebeb";
         like = false;
-        const res = await axios.put("http://localhost:3000/api/like", {
-          userId: user._id,
-          postId: post._id,
-          like,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/like`,
+          {
+            userId: user._id,
+            postId: post._id,
+            like,
+          }
+        );
 
         setPost(res.data);
         setUserLike({});
@@ -178,11 +187,14 @@ function VideoCard({ data, index, user, userfollows }) {
     if (user) {
       if (Follow?.follows?.length === 0 || Follow?.follows === undefined) {
         follow = true;
-        const res = await axios.put("http://localhost:3000/api/follow", {
-          postId: post?.postedBy?._id,
-          userId: user?._id,
-          follow,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/follow`,
+          {
+            postId: post?.postedBy?._id,
+            userId: user?._id,
+            follow,
+          }
+        );
         setFollow({ ...Follow, follows: res.data.follows });
         setContentFollow("Following");
         setUserFollow(null);
@@ -192,21 +204,27 @@ function VideoCard({ data, index, user, userfollows }) {
         contentFollow !== "Following"
       ) {
         follow = true;
-        const res = await axios.put("http://localhost:3000/api/follow", {
-          postId: post?.postedBy?._id,
-          userId: user?._id,
-          follow,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/follow`,
+          {
+            postId: post?.postedBy?._id,
+            userId: user?._id,
+            follow,
+          }
+        );
         setFollow({ ...Follow, follows: res.data.follows });
         setContentFollow("Following");
         setUserFollow(null);
       } else {
         follow = false;
-        const res = await axios.put("http://localhost:3000/api/follow", {
-          postId: post?.postedBy?._id,
-          userId: user?._id,
-          follow,
-        });
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/follow`,
+          {
+            postId: post?.postedBy?._id,
+            userId: user?._id,
+            follow,
+          }
+        );
         setFollow({ ...Follow, follows: res.data.follows });
         setUserFollow(null);
         setContentFollow("Follow");
@@ -241,8 +259,8 @@ function VideoCard({ data, index, user, userfollows }) {
   return (
     <div key={index} className={cx("wrapper")}>
       <Image1
-      width={40}
-      height={40}
+        width={40}
+        height={40}
         key={index}
         className={cx("user-image")}
         src={data?.postedBy?.image}

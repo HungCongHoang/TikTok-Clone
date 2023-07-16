@@ -55,7 +55,8 @@ function VideoDetails({ postDetails }: IProps) {
         setLike((prev) => prev + 1);
         likeRef.current.style.color = "#ff3b5c";
         setIsLike(true);
-        const { data } = await axios.put("http://localhost:3000/api/like", {
+        const { data } = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL
+        }/api/like`, {
           userId: userProfile._id,
           postId: post?._id,
           islike,
@@ -196,7 +197,8 @@ function VideoDetails({ postDetails }: IProps) {
 }
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = await axios.get(`http://localhost:3000/api/post/${id}`);
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL
+  }/api/post/${id}`);
   return {
     props: { postDetails: data },
   };
